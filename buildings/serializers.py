@@ -18,9 +18,7 @@ class LectureHallSerializer(serializers.ModelSerializer):
 
 class BuildingSerializer(serializers.ModelSerializer):
     images = BuildingImageSerializer(many=True, read_only=True)
-    offices = OfficeSerializer(many=True, read_only=True)
-    lecture_halls = LectureHallSerializer(many=True, read_only=True)
 
     class Meta:
         model = Building
-        fields = ['id', 'name', 'description', 'floors', 'images', 'offices', 'lecture_halls']
+        fields = ['id', 'name', 'description', 'floors', 'latitude', 'longitude', 'images', 'offices', 'lecture_halls']
