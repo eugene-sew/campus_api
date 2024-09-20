@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'drf_yasg',
     'buildings',
     'places',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Add this line
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,5 +132,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+    "https://your-frontend-domain.com",  
+]
+
+# Optionally, allow all origins (not recommended for production)
+CORS_ALLOW_ALL_ORIGINS = True
 
 
