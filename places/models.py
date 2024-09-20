@@ -5,6 +5,8 @@ from django.db import models
 class Place(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    latitude = models.FloatField(null=True, blank=True)  # Added latitude field
+    longitude = models.FloatField(null=True, blank=True)  # Added longitude field
 
     def __str__(self):
         return self.name
